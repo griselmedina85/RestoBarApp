@@ -44,11 +44,11 @@
                                     <td>{{reservation.numberDiners}}</td>
                                     <td>{{reservation.date | date: 'd/M/yy' }} - {{reservation.time}} hs.</td>
                                     <td class="text-center">
-                                        <button type="button" class="btn btn-success" (click)="atenderReserva(reservation, $event)">Atender</button>
+                                        <button type="button" class="btn btn-success ms-2" (click)="atenderReserva(reservation, $event)">Atender</button>
                                         
-                                        <button type="button" class="btn btn-warning" (click)="finalizarReserva(reservation, $event)">Finalizar</button>
+                                        <button type="button" class="btn btn-warning ms-2" (click)="finalizarReserva(reservation, $event)">Finalizar</button>
                                             
-                                        <button type="button" class="btn btn-danger" (click)="cancelarReserva(reservation, $event)">Cancelar</button>
+                                        <button type="button" class="btn btn-danger ms-2" (click)="cancelarReserva(reservation, $event)">Cancelar</button>
                                     </td>
                                 </tr>
                             </tbody>
