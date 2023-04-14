@@ -1,0 +1,102 @@
+<!-- <p>everybody-form works!</p> -->
+<div class="container mt-6">
+    <div class=" card p-3 ">
+        <form [formGroup]="formPerson" class="form-group">
+            <fieldset [disabled]="buttonOn$ | async">
+                <div class="row mb-4 ">
+                    <div class="col-4 ">
+                        <div class="form-outline ">
+                            <label class="form-label " for="firstName ">Nombre</label>
+                            <input type="text " id="firstName " class="form-control " formControlName="personName" />
+                        </div>
+                        <div *ngIf="formPerson.invalid && (personName?.dirty || personName?.touched)">
+                            <div class="alert alert-danger pt-1 pb-1 small" *ngIf="personName?.errors?.['required']">Nombre requerido.</div>
+                            <div class="alert alert-danger pt-1 pb-1 small" *ngIf="personName?.errors?.['minlength']">mínimo 3 letras.</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-outline ">
+                            <label class="form-label " for="lastName ">Apellido</label>
+                            <input type="text " id="lastName " class="form-control " formControlName="personLastName" />
+                        </div>
+                        <div *ngIf="formPerson.invalid && (personLastName?.dirty || personLastName?.touched)">
+                            <div class="alert alert-danger pt-1 pb-1 small" *ngIf="personLastName?.errors?.['required']">Apellido requerido.</div>
+                            <div class="alert alert-danger pt-1 pb-1 small" *ngIf="personLastName?.errors?.['minlength']">mínimo 3 letras.</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-outline ">
+                            <label class="form-label " for="dni ">DNI N°</label>
+                            <input type="number" id="dni " class="form-control " formControlName="identityNumber" minlength="7" />
+                        </div>
+                        <div *ngIf="formPerson.invalid && (identityNumber?.dirty || identityNumber?.touched)">
+                            <div class="alert alert-danger pt-1 pb-1 small" *ngIf="identityNumber?.errors?.['required']">DNI requerido.</div>
+                            <div class="alert alert-danger pt-1 pb-1 small" *ngIf="identityNumber?.errors?.['min']">mínimo 7 números.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4 ">
+                    <div class="col-6">
+                        <div class="form-outline ">
+                            <label class="form-label " for="phone ">Teléfono</label>
+                            <input type="text " id="phone " class="form-control " formControlName="phone" />
+                            <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+                                <div class="alert alert-danger pt-1 pb-1 small" *ngIf="phone?.errors?.['required']">Teléfono requerido.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-outline">
+                            <label class="form-label " for="birthday ">Fecha Nacimiento</label>
+                            <app-datepicker id="birthday" (clickedEvent)="recibedato($event)"></app-datepicker>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4 ">
+                    <div class="col-6">
+                        <div class="form-outline">
+                            <label class="form-label " for="address">Género</label>
+                            <input type="text " id="address" class="form-control " formControlName="gender" />
+                        </div>
+                        <div *ngIf="formPerson.invalid && (gender?.dirty || gender?.touched)">
+                            <div class="alert alert-danger pt-1 pb-1 small" *ngIf="gender?.errors?.['required']">Género requerido.</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-outline">
+                            <label class="form-label " for="email ">Email</label>
+                            <input type="email " id="email " class="form-control " formControlName="email" />
+                        </div>
+                        <div *ngIf="(email?.dirty || email?.touched)">
+                            <div class="alert alert-danger pt-1 pb-1 small" *ngIf="email?.errors?.['pattern']">correo mal escrito.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4 ">
+                    <div class="form-outline">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchClient" formControlName="isClient">
+                            <label class="form-check-label" for="flexSwitchClient">Cliente</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckUser" formControlName="isUser">
+                            <label class="form-check-label" for="flexSwitchCheckUser">Usuario</label>
+                        </div>
+                    </div>
+                    <!-- <div class="form-outline">
+                        <label class="form-label " for="dataExtra ">Información Adicional</label>
+                        <textarea class="form-control " id="dataExtra " rows="4 " formControlName="dataExtra"></textarea>
+                    </div> -->
+                </div>
+            </fieldset>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end ">
+                <button type="button" class="btn btn-danger mb-4" (click)="deleteClient()" [disabled]="(buttonOn$ | async) || vm.personId==0">Eliminar</button>
+                <button class="btn btn-warning btn-block mb-4 " type="button" (click)="onCancel()" [disabled]="buttonOn$ | async">Cancelar</button>
+                <button type="button " class="btn btn-primary btn-block mb-4 " (click)="onSave()" [disabled]="!formPerson.valid || (buttonOn$ | async)">Grabar</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>

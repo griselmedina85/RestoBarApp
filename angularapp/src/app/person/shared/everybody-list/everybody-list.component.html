@@ -1,0 +1,33 @@
+<div class="container mt-6">
+
+    <form>
+        <div class="mb-3 row">
+            <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Buscar:</label>
+            <div class="col-xs-3 col-sm-auto">
+                <input id="table-filtering-search" class="form-control" type="text" [formControl]="filter" />
+            </div>
+        </div>
+    </form>
+
+    <table class="table table-hover align-middle">
+        <thead>
+            <tr>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">DNI</th>
+                <th scope="col" class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of vm | filterPipe : filter.value" [class.table-success]="user.personId == selectedid" (click)="select(user)">
+
+                <td>{{user.personName}}</td>
+                <td>{{user.personLastName}}</td>
+                <td>{{user.identityNumber}}</td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-warning" (click)="editClient(user, $event)">Editar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

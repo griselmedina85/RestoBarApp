@@ -1,0 +1,8 @@
+C:\Users\Damian\source\repos\Devlight\Resto\angularapp\obj\Debug\angularapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Damian\source\repos\Devlight\Resto\angularapp\obj\Debug\angularapp.esproj.CoreCompileInputs.cache
+C:\Users\Damian\source\repos\ProyectoRestoBar\RestoBar_front_back\angularapp\obj\Debug\angularapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Damian\source\repos\ProyectoRestoBar\RestoBar_front_back\angularapp\obj\Debug\angularapp.esproj.CoreCompileInputs.cache
+C:\Users\Griselda\OneDrive\Documentos\.Net Angular\RestoBar_front_back\angularapp\obj\Debug\angularapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Griselda\OneDrive\Documentos\.Net Angular\RestoBar_front_back\angularapp\obj\Debug\angularapp.esproj.CoreCompileInputs.cache
+C:\Proyectos\RestoBar\RestoBar_front_back\angularapp\obj\Debug\angularapp.esproj.SuggestedBindingRedirects.cache
+C:\Proyectos\RestoBar\RestoBar_front_back\angularapp\obj\Debug\angularapp.esproj.CoreCompileInputs.cache

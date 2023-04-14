@@ -1,0 +1,14 @@
+<form class="row row-cols-sm-auto">
+    <div class="col-12">
+        <div class="input-group">
+            <input class="form-control" placeholder="mm-dd-yyyy" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" readonly/>
+            <button class="btn btn-outline-secondary" (click)="d.toggle()" (blur)="onClicked()" type="button"><i class="bi bi-calendar"></i></button>
+        </div>
+        <!-- <i class="bi bi-window"></i> -->
+    </div>
+</form>
+
+<!-- <hr /> -->
+<!-- <pre>Model: {{ model | json }}</pre> -->
+
+<!-- <ngb-alert class="mt-3 mb-0" type="info" [dismissible]="false"> -->
